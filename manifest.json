@@ -1,0 +1,24 @@
+{
+"name": "T2",
+"version": "2.0",
+"manifest_version": 2,
+"description": "评论采集",
+"browser_action": {
+"default_icon": "icon/icon.png"
+},
+"permissions": [
+"webNavigation",
+"tabs",
+"contextMenus",
+"http://edc.boxintheship.com/collect/tools/amazon/reviewreceivedata"
+],
+"background": {
+"scripts": ["background.js","eventPage.js","jquery-3.2.1.min.js"]
+},
+"content_scripts": [
+{
+"matches": ["*://*/*"],
+"js": ["jquery-3.2.1.min.js", "contentscript.js"]
+}
+]
+}
